@@ -1,0 +1,15 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+set backspace=indent,eol,start
+set nu
+set ts=4 sw=4 
+set expandtab
+set smartcase
+set incsearch
+set ruler
+set noswapfile
+set title
+set cm=blowfish2
+set foldmethod=indent
+set foldlevel=10

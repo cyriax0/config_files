@@ -1,0 +1,26 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select=50
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle :compinstall filename '/home/cyriax/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory autocd extendedglob
+unsetopt beep nomatch notify
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+fpath=( "$HOME/.zsh/zfunctions" $fpath )
+
+autoload -U promptinit; promptinit
+prompt pure
+#prompt adam2 red
+
+. $HOME/.rc

@@ -1,0 +1,20 @@
+# vim: syntax=sh
+
+alias ls='ls --color=auto'
+
+export EDITOR=vim
+export VISUAL=vim
+export CDPATH=.:$HOME/uni:$CDPATH
+PATH=$HOME/bin:$PATH
+PATH=$HOME/.linuxbrew/bin:$PATH		# dep: linuxbrew
+PATH=$HOME/.screenlayout:$PATH		# dep: arandr
+PATH=/usr/local/go/bin:$HOME/prog/go/bin:$PATH	# dep: golang
+PATH=$PATH:/sbin:/usr/sbin
+export PATH
+export GOPATH=$HOME/prog/go			# dep: golang
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
+
+[ -s $HOME/.task/pending.data ] && task next
+
+
+true
