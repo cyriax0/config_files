@@ -17,6 +17,8 @@ unsetopt beep nomatch notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+bindkey '' backward-delete-char # Deletes properly in vi mode (get ASCII DEL with C-k DT or C-v 127)
+
 fpath=( "$HOME/.zsh/zfunctions" $fpath )
 
 autoload -U promptinit; promptinit
