@@ -25,4 +25,6 @@ autoload -U promptinit; promptinit
 prompt pure
 #prompt adam2 red
 
+alias history="history 1"
+
 . $HOME/.rc
