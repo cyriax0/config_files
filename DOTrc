@@ -1,6 +1,8 @@
 # vim: syntax=sh
 
 alias ls='ls --color=auto'
+alias xclip='xclip -selection clipboard'
+alias vimsec='vim -i NONE'
 
 export EDITOR=vim
 export VISUAL=vim
@@ -15,6 +17,5 @@ export GOPATH=$HOME/prog/go			# dep: golang
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
 
 [ -s $HOME/.task/pending.data ] && task next
-
 
 true
