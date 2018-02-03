@@ -1,0 +1,50 @@
+# [Created by task 2.5.1 12/6/2017 09:49:00]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+# Color theme (uncomment one to use)
+#include /usr/share/taskwarrior/light-16.theme
+#include /usr/share/taskwarrior/light-256.theme
+#include /usr/share/taskwarrior/dark-16.theme
+#include /usr/share/taskwarrior/dark-256.theme
+#include /usr/share/taskwarrior/dark-red-256.theme
+#include /usr/share/taskwarrior/dark-green-256.theme
+#include /usr/share/taskwarrior/dark-blue-256.theme
+include /usr/share/taskwarrior/dark-violets-256.theme
+#include /usr/share/taskwarrior/dark-yellow-green.theme
+#include /usr/share/taskwarrior/dark-gray-256.theme
+#include /usr/share/taskwarrior/dark-gray-blue-256.theme
+#include /usr/share/taskwarrior/solarized-dark-256.theme
+#include /usr/share/taskwarrior/solarized-light-256.theme
+#include /usr/share/taskwarrior/no-color.theme
+
+urgency.blocking.coefficient=0.2
+urgency.due.coefficient=1.5
+urgency.scheduled.coefficient=0.5
+urgency.age.coefficient=-0.01
+urgency.uda.priority.L.coefficient=-1.5
+
+urgency.user.tag.easy.coefficient=0.3
+urgency.user.tag.sub.coefficient=-5.0
+urgency.user.tag.sub.coefficient=-4.0
+urgency.user.tag.meta.coefficient=6.0
+
+urgency.user.project.kacheln.coefficient=-0.4
+
+verbose=new-id,project,sync
+
+report.rc.description=A report that is shown in every new shell
+report.rc.columns=id,description,urgency,due.relative
+report.rc.filter=status:pending limit:6
+report.rc.sort=urgency-
