@@ -3,6 +3,7 @@
 alias ls='ls --color=auto'
 alias xclip='xclip -selection clipboard'
 alias vimsec='vim -i NONE'
+alias less='less -r'
 
 export EDITOR=vim
 export VISUAL=vim
@@ -16,6 +17,6 @@ export PATH
 export GOPATH=$HOME/prog/go			# dep: golang
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
 
-[ -s $HOME/.task/pending.data ] && task next
+[ -s $HOME/.task/pending.data ] && task next limit:6
 
 true
