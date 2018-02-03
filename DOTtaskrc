@@ -45,6 +45,6 @@ urgency.user.project.kacheln.coefficient=-0.4
 verbose=new-id,project,sync
 
 report.rc.description=A report that is shown in every new shell
-report.rc.columns=id,description,urgency,due.relative
+report.rc.columns=id,description,due.relative
 report.rc.filter=status:pending limit:6
 report.rc.sort=urgency-
