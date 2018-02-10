@@ -42,6 +42,8 @@ urgency.user.tag.meta.coefficient=6.0
 
 urgency.user.project.kacheln.coefficient=-0.4
 
+urgency.project.coefficient=-1
+
 verbose=new-id,project,sync
 
 report.rc.description=A report that is shown in every new shell
