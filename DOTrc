@@ -6,14 +6,17 @@ alias vimsec='vim -i NONE'
 alias less='less -r'
 alias dxfviewer='java -jar ~/stuff/bin/dxfviewer-swing.jar'
 
+pinga(){ping -c 1 $@ && say ping ; sleep 1s; pinga $@}
+
 export EDITOR=vim
 export VISUAL=vim
-export CDPATH=.:$HOME/uni:$CDPATH
-PATH=$HOME/bin:$PATH
+#export CDPATH=.:$HOME/uni:$CDPATH
+PATH=$HOME/.local/bin:$PATH
 PATH=$HOME/.linuxbrew/bin:$PATH		# dep: linuxbrew
 PATH=$HOME/.screenlayout:$PATH		# dep: arandr
 PATH=/usr/local/go/bin:$HOME/prog/go/bin:$PATH	# dep: golang
 PATH=$PATH:/sbin:/usr/sbin
+PATH=$HOME/bin:$PATH
 export PATH
 export GOPATH=$HOME/prog/go			# dep: golang
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
