@@ -28,7 +28,7 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/share/i3blocks/$BLOCK_NAME
+command=$HOME/.local/share/i3blocks/$BLOCK_NAME
 separator_block_width=10
 markup=none
 
@@ -36,9 +36,9 @@ markup=none
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
-[iface]
+[net]
 label=
-#instance=wlan0
+instance=docker0,lo
 color=#00FF00
 interval=10
 separator=false
@@ -47,6 +47,7 @@ separator=false
 #instance=wlp3s0
 #interval=10
 #separator=false
+
 
 [bandwidth]
 #instance=eth0
@@ -102,6 +103,10 @@ separator=false
 label=
 interval=9
 #min_width=CPU: 99.00%
+#[governor]
+#command=cat /sys/bus/cpu/devices/cpu0/cpufreq/scaling_governor
+
+
 #
 # Battery indicator
 #
