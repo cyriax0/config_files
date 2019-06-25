@@ -13,3 +13,8 @@ set title
 set cm=blowfish2
 set foldmethod=indent
 set foldlevel=10
+set viminfo=
+" Moved to .vim/after/syntax/python.vim
+" set colorcolumn=80
+" highlight OverLength ctermbg=1 ctermfg=white guibg=#841617
+" match OverLength /\%80v.\+/

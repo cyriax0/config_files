@@ -32,6 +32,14 @@ command=$HOME/.local/share/i3blocks/$BLOCK_NAME
 separator_block_width=10
 markup=none
 
+#[task]
+#interval=1
+#command=task rc limit:1
+
+#[cal]
+#command=env|tr '\n' % | tee /home/cyriax/what
+#interval=2
+
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
@@ -53,7 +61,8 @@ separator=false
 #instance=eth0
 interval=5
 
-
+[mail]
+interval=60
 
 # Memory usage
 #

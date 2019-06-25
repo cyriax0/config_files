@@ -5,8 +5,10 @@ alias xclip='xclip -selection clipboard'
 alias vimsec='vim -i NONE'
 alias less='less -r'
 alias dxfviewer='java -jar ~/stuff/bin/dxfviewer-swing.jar'
+alias py='python3 -i -c "from math import *"'
 
 pinga(){ping -c 1 $@ && say ping ; sleep 1s; pinga $@}
+
 
 export EDITOR=vim
 export VISUAL=vim
@@ -17,10 +19,15 @@ PATH=$HOME/.screenlayout:$PATH		# dep: arandr
 PATH=/usr/local/go/bin:$HOME/prog/go/bin:$PATH	# dep: golang
 PATH=$PATH:/sbin:/usr/sbin
 PATH=$HOME/bin:$PATH
+PATH=$HOME/.miniconda3/bin:$PATH
 export PATH
 export GOPATH=$HOME/prog/go			# dep: golang
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
 
+. /home/cyriax/.miniconda3/etc/profile.d/conda.sh
+
+slical
 [ -s $HOME/.task/pending.data ] && task rc
+task highprio > /dev/null && notify-send -u critical "Urgent Tasks" "$(task highprio)"
 
 true

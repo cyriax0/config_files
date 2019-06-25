@@ -48,5 +48,10 @@ verbose=new-id,project,sync
 
 report.rc.description=A report that is shown in every new shell
 report.rc.columns=id,description,due.relative
-report.rc.filter=status:pending limit:6
+report.rc.filter=status:pending limit:6 project:
 report.rc.sort=urgency-
+
+report.highprio.description=Only high prioity tasks
+report.highprio.columns=description
+report.highprio.filter=status:pending prio:H
+report.highprio.sort=urgency-
