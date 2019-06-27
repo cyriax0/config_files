@@ -7,7 +7,7 @@ alias less='less -r'
 alias dxfviewer='java -jar ~/stuff/bin/dxfviewer-swing.jar'
 alias py='python3 -i -c "from math import *"'
 
-pinga(){ping -c 1 $@ && say ping ; sleep 1s; pinga $@}
+pinga(){ping -qc 1 $@ && say ping ; sleep 1s; pinga $@}
 
 
 export EDITOR=vim
@@ -27,7 +27,7 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/u
 . /home/cyriax/.miniconda3/etc/profile.d/conda.sh
 
 slical
-[ -s $HOME/.task/pending.data ] && task rc
-task highprio > /dev/null && notify-send -u critical "Urgent Tasks" "$(task highprio)"
+task rc 2>1 /dev/null && task rc
+task highprio 2>1 /dev/null && notify-send -t 60000 -u critical "Urgent Tasks" "$(task highprio)"
 
 true
