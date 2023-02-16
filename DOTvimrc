@@ -14,7 +14,18 @@ set cm=blowfish2
 set foldmethod=indent
 set foldlevel=10
 set viminfo=
+set bg=dark
+set ai
+set nofoldenable
+set diffopt+=context:99999
+let g:vim_markdown_folding_disabled=1
+command -nargs=* Ledger %y z|tabnew <args>|0put=@z|%!hledger -f /dev/stdin <args>
 " Moved to .vim/after/syntax/python.vim
 " set colorcolumn=80
 " highlight OverLength ctermbg=1 ctermfg=white guibg=#841617
 " match OverLength /\%80v.\+/
+set modeline
+autocmd FileType markdown setlocal suffixesadd=.md,.txt
+autocmd FileType text setlocal suffixesadd=.md,.txt
+autocmd FileType cond setlocal suffixesadd=.md,.txt
+map Q <Nop>

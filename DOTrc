@@ -1,14 +1,39 @@
 # vim: syntax=sh
 
 alias ls='ls --color=auto'
+alias l='ls --color=auto'
 alias xclip='xclip -selection clipboard'
 alias vimsec='vim -i NONE'
 alias less='less -r'
 alias dxfviewer='java -jar ~/stuff/bin/dxfviewer-swing.jar'
-alias py='python3 -i -c "from math import *"'
+#alias py='python3.6 -i -c "from math import *;import matplotlib.pyplot as plt;import numpy as np"'
+alias py='python -i -c "from sympy.abc import *;from sympy import *;S=lambda *s:solve(Eq(s[0],s[1]),*s[2:]);M=lambda s:Matrix(symbols(s))"'
+alias vnstat="vnstat -i wlp3s0"
 
-pinga(){ping -qc 1 $@ && say ping ; sleep 1s; pinga $@}
+alias cal='cal -A 1'
+alias backlog="task project:backlog"
+alias emacs="emacs -nw"
+alias black="python3.7 -m black -q - "
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias kacheln="conda activate tiler3;cd ~/prog/kacheln/src"
+alias getmail="getmail -r rbi -r gmx -r uas"
+#alias ymusic="mpv --ytdl-format=worstaudio $(xclip -o)"
+#alias yvideo="mpv --ytdl-format=worst $(xclip -o)"
+alias sum="paste -sd+|bc"
+#alias vim="vim -u ~/.SpaceVim/vimrc"
+#alias vim="nvim -u ~/.SpaceVim/vimrc"
+alias matlab-cli="matlab -nojvm -nosplash -nodesktop -r"
+alias jupyter-lab="(conda activate jupyter;jupyter-lab --no-browser)"
+alias doi2bib='doi2bib `xclip -o`|xclip'
+#alias mutt="getmail -r rbi -r gmx -r 1und1 -r tud & mutt"
 
+pinga(){ ping -qc 1 $@ && say pong ; sleep 1s; pinga $@ }
+
+# be sure to activate bash completion in zsh first:
+# zsh> autoload -U +X bashcompinit && bashcompinit
+eval "$(pandoc --bash-completion)"
 
 export EDITOR=vim
 export VISUAL=vim
@@ -23,11 +48,17 @@ PATH=$HOME/.miniconda3/bin:$PATH
 export PATH
 export GOPATH=$HOME/prog/go			# dep: golang
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
+export SDL_AUDIODRIVER=pulse
+
+setcontext(){ pwd > /dev/shm/shcontext }
+unsetcontext(){ [ -e /dev/shm/shcontext ] && rm /dev/shm/shcontext }
+[ -e /dev/shm/shcontext ] && cd $(cat /dev/shm/shcontext)
 
 . /home/cyriax/.miniconda3/etc/profile.d/conda.sh
 
-slical
-task rc 2>1 /dev/null && task rc
-task highprio 2>1 /dev/null && notify-send -t 60000 -u critical "Urgent Tasks" "$(task highprio)"
+slical double
+task rc 2> /dev/null > /dev/null && task rc
+task highprio 2> /dev/null > /dev/null && notify-send -t 60000 -u critical "Urgent Tasks" "$(task highprio)"
 
 true
+
